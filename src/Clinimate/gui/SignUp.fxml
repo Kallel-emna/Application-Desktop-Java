@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="629.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Clinimate.gui.SignUpController">
+   <children>
+      <ImageView fitHeight="463.0" fitWidth="453.0" layoutX="427.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@hero-img.png" />
+         </image>
+      </ImageView>
+      <Pane prefHeight="636.0" prefWidth="427.0" style="-fx-background-color: linear-gradient(to right, #0f2027, #203a43, #2c5364); -fx-background-radius: 30px;">
+         <children>
+            <TextField fx:id="emailR" alignment="CENTER" layoutX="117.0" layoutY="52.0" prefHeight="30.0" prefWidth="195.0" promptText="Email" style="-fx-background-radius: 30px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="PasswordR" alignment="CENTER" layoutX="116.0" layoutY="163.0" prefHeight="30.0" prefWidth="195.0" promptText="Mot de Passe" style="-fx-background-radius: 30px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="firstnameR" alignment="CENTER" layoutX="117.0" layoutY="224.0" prefHeight="30.0" prefWidth="195.0" promptText="Nom" style="-fx-background-radius: 30px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="LastnameR" alignment="CENTER" layoutX="117.0" layoutY="288.0" prefHeight="30.0" prefWidth="195.0" promptText="Prénom" style="-fx-background-radius: 30px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="AddressR" alignment="CENTER" layoutX="116.0" layoutY="346.0" prefHeight="30.0" prefWidth="195.0" promptText="Addresse" style="-fx-background-radius: 30px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TelephoneR" alignment="CENTER" layoutX="117.0" layoutY="408.0" prefHeight="30.0" prefWidth="195.0" promptText="Télephone" style="-fx-background-radius: 30px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="valider" layoutX="86.0" layoutY="555.0" mnemonicParsing="false" onAction="#SignUpButton" prefHeight="25.0" prefWidth="256.0" style="-fx-background-radius: 30px; -fx-background-color: linear-gradient(to right, #134e5e, #71b280);" text="Valider" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <ComboBox fx:id="roleR" layoutX="117.0" layoutY="110.0" prefHeight="25.0" prefWidth="195.0" promptText="Choisir Role " style="-fx-background-radius: 30;" />
+            <TextField fx:id="animalR" alignment="CENTER" layoutX="117.0" layoutY="496.0" prefHeight="30.0" prefWidth="195.0" promptText="Reponse" style="-fx-background-radius: 30px;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="questionR" layoutX="67.0" layoutY="458.0" prefHeight="25.0" prefWidth="293.0" promptText="Question ?" style="-fx-background-radius: 30;" />
+         </children>
+      </Pane>
+      <Button fx:id="Dashboard" layoutX="805.0" layoutY="16.0" mnemonicParsing="false" onAction="#BackDashboard" style="-fx-background-radius: 20; -fx-background-color: linear-gradient(to right, #0f2027, #203a43, #2c5364);" text="RETOUR" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

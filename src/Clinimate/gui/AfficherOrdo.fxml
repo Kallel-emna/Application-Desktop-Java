@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="628.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Clinimate.gui.AfficherOrdoController">
+   <children>
+      <TableView fx:id="tvordonnance" layoutX="304.0" layoutY="41.0" prefHeight="587.0" prefWidth="583.0">
+        <columns>
+          <TableColumn fx:id="nompatient" prefWidth="132.0" text="Nom patient " />
+            <TableColumn fx:id="date" prefWidth="148.79995727539062" text="Date" />
+            <TableColumn fx:id="medicament" minWidth="0.0" prefWidth="172.0" text="Medicament" />
+            <TableColumn fx:id="consul" prefWidth="129.60003662109375" text="Notes" />
+        </columns>
+      </TableView>
+      <TextField fx:id="recherche" layoutX="512.0" layoutY="7.0" onAction="#rechercher" onKeyReleased="#FiltreKeyRealsead" prefHeight="26.0" prefWidth="167.0" promptText="Recherche..." style="-fx-background-radius: 30;" />
+      <Pane layoutY="-1.0" prefHeight="629.0" prefWidth="302.0" style="-fx-background-color: linear-gradient(to right, #0f2027, #203a43, #2c5364);">
+         <children>
+            <ImageView fitHeight="297.0" fitWidth="306.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@CliniMate.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="tfnom1" alignment="CENTER" layoutX="64.0" layoutY="241.0" prefHeight="30.0" prefWidth="195.0" promptText="Nom patient" style="-fx-background-radius: 30px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="tfmedicament" alignment="CENTER" layoutX="63.0" layoutY="335.0" prefHeight="30.0" prefWidth="195.0" promptText="Médicament" style="-fx-background-radius: 30px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnajoutordo" layoutX="77.0" layoutY="433.0" mnemonicParsing="false" onAction="#ajouterordo" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: linear-gradient(to right, #134e5e, #71b280); -fx-background-radius: 30;" text="Ajouter Ordonnance" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <DatePicker fx:id="tfdate" layoutX="64.0" layoutY="290.0" prefHeight="25.0" prefWidth="195.0" promptText="Date" style="-fx-background-radius: 30;" />
+            <Button fx:id="btnsupprordo1" layoutX="69.0" layoutY="585.0" mnemonicParsing="false" onAction="#selectLinepdf" prefHeight="25.0" prefWidth="195.0" style="-fx-background-radius: 30px; -fx-background-color: linear-gradient(to right, #134e5e, #71b280);" text="Imprimer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnsupprordo" layoutX="77.0" layoutY="483.0" mnemonicParsing="false" onAction="#suprimer" prefHeight="25.0" prefWidth="167.0" style="-fx-background-radius: 30px; -fx-background-color: linear-gradient(to right, #dc2424, #4a569d);" text="Supprimer Ordonnance" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Separator layoutY="569.0" prefHeight="5.0" prefWidth="306.0" style="-fx-background-color: #777cdf;" />
+            <ComboBox fx:id="cbcons" layoutX="63.0" layoutY="386.0" prefHeight="25.0" prefWidth="195.0" style="-fx-background-radius: 30;" />
+            <Button fx:id="btnretour" layoutX="15.0" layoutY="13.0" mnemonicParsing="false" onAction="#retour" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: linear-gradient(to right, #134e5e, #71b280); -fx-background-radius: 30;" text="Retour" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Separator layoutY="225.0" prefHeight="5.0" prefWidth="306.0" style="-fx-background-color: #777cdf;" />
+            <Separator layoutY="418.0" prefHeight="5.0" prefWidth="306.0" style="-fx-background-color: #777cdf;" />
+            <Button fx:id="btnsupprordo2" layoutX="46.0" layoutY="529.0" mnemonicParsing="false" onAction="#table1" prefHeight="25.0" prefWidth="242.0" style="-fx-background-color: linear-gradient(to right, #134e5e, #71b280); -fx-background-radius: 30;" text="Afficher Ordonnance par médicament " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Button fx:id="generateQR" layoutX="764.0" layoutY="5.0" mnemonicParsing="false" onAction="#generateQR" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: linear-gradient(to right, #134e5e, #71b280); -fx-background-radius: 30;" text="QR CODE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnsupprordo11" layoutX="319.0" layoutY="7.0" mnemonicParsing="false" onAction="#Trie_desc" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: linear-gradient(to right, #134e5e, #71b280); -fx-background-radius: 30;" text="Trier" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

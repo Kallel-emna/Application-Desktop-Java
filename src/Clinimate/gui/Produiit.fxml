@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="628.0" prefWidth="882.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Clinimate.gui.ProduiitController">
+    <stylesheets>
+        <URL value="@produiit.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tableview_prod" editable="true" layoutX="298.0" layoutY="64.0" prefHeight="562.0" prefWidth="586.0" style="-fx-background-radius: 30;">
+         <columns>
+            <TableColumn fx:id="nom_produit" prefWidth="167.99993896484375" style="-fx-alignment: center;" text="Nom" />
+            <TableColumn fx:id="quantite" prefWidth="107.20004272460938" style="-fx-alignment: center;" text="Quantité" />
+            <TableColumn fx:id="prix" prefWidth="92.79998779296875" style="-fx-alignment: center;" text="Prix" />
+            <TableColumn fx:id="categorie_id" prefWidth="170.4000244140625" style="-fx-alignment: center;" text="Catégorie" />
+         </columns>
+      </TableView>
+      <Pane prefHeight="629.0" prefWidth="299.0" style="-fx-background-color: linear-gradient(to right, #0f2027, #203a43, #2c5364);">
+         <children>
+            <Text fill="#11998e" strokeType="OUTSIDE" strokeWidth="0.0" text="Produit" wrappingWidth="200.0">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Text>
+            <Label layoutX="10.0" layoutY="374.0" prefHeight="33.0" prefWidth="114.0" text="Nom Produit:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nomprod" layoutX="145.0" layoutY="378.0" style="-fx-background-radius: 30;" />
+            <Button fx:id="ajouter_prod" layoutX="8.0" layoutY="468.0" mnemonicParsing="false" onAction="#Ajouter_prod" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: linear-gradient(to right, #134e5e, #71b280); -fx-background-radius: 30;" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="supp_prod" layoutX="150.0" layoutY="468.0" mnemonicParsing="false" onAction="#Supprimer_prod" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: linear-gradient(to right, #dc2424, #4a569d); -fx-background-radius: 30;" text="Supprimer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="5.0" layoutY="192.0" prefHeight="34.0" prefWidth="138.0" text="Quantité Produit:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="304.0" prefHeight="33.0" prefWidth="114.0" text="Prix Produit:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="8.0" layoutY="246.0" prefHeight="33.0" prefWidth="114.0" text="Catégorie:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Quantite" layoutX="146.0" layoutY="197.0" style="-fx-background-radius: 30;" />
+            <TextField fx:id="prixx" layoutX="146.0" layoutY="308.0" style="-fx-background-radius: 30;" />
+            <ComboBox fx:id="cat" layoutX="145.0" layoutY="250.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-radius: 30;" />
+            <Button fx:id="retour" layoutX="24.0" layoutY="14.0" mnemonicParsing="false" onAction="#Retour" prefHeight="34.0" prefWidth="114.0" style="-fx-background-color: linear-gradient(to right, #134e5e, #71b280); -fx-background-radius: 30;" text="RETOUR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="panier" layoutX="89.0" layoutY="559.0" mnemonicParsing="false" onAction="#panier" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: linear-gradient(to right, #134e5e, #71b280); -fx-background-radius: 30;" text="Panier" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="150.0" fitWidth="177.0" layoutX="63.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@CliniMate.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TextField fx:id="recherche" layoutX="582.0" layoutY="14.0" onKeyReleased="#FiltreKeyRealsead" prefHeight="34.0" prefWidth="210.0" style="-fx-background-radius: 30;" />
+      <Button fx:id="tri" layoutX="396.0" layoutY="18.0" mnemonicParsing="false" onAction="#Trie" prefWidth="122.0" style="-fx-background-color: linear-gradient(to right, #134e5e, #71b280); -fx-background-radius: 30;" text="Trier" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

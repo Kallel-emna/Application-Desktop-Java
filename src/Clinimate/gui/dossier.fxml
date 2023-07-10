@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="623.0" prefWidth="891.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Clinimate.gui.DossierController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="126.0" layoutY="38.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="623.0" prefWidth="297.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="-6.0" layoutY="-3.0" prefHeight="623.0" prefWidth="307.0" style="-fx-background-color: linear-gradient(to right, #0f2027, #203a43, #2c5364);" stylesheets="@bilan.css">
+                           <styleClass>
+                              <String fx:value="white-form" />
+                              <String fx:value="border" />
+                           </styleClass>
+                           <children>
+                              <TextField fx:id="certificat" layoutX="17.0" layoutY="248.0" prefHeight="86.0" prefWidth="246.0" style="-fx-background-radius: 30;" />
+                              <TextField fx:id="groupe_sanguin" layoutX="22.0" layoutY="387.0" prefHeight="34.0" prefWidth="75.0" style="-fx-background-radius: 30;" />
+                              <Label layoutX="23.0" layoutY="216.0" prefHeight="18.0" prefWidth="98.0" text="Certificat" textFill="WHITE">
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="20.0" layoutY="359.0" text="Groupe Sanguin" textFill="WHITE">
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="ajouterD" layoutX="45.0" layoutY="531.0" mnemonicParsing="false" onAction="#Ajouter_Dossier" prefHeight="40.0" prefWidth="188.0" style="-fx-background-radius: 30; -fx-background-color: linear-gradient(to right, #134e5e, #71b280);" text="Ajouter" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <ComboBox fx:id="ordonnance_combo" layoutX="17.0" layoutY="471.0" prefWidth="150.0" style="-fx-background-radius: 30;" />
+                              <Label layoutX="22.0" layoutY="442.0" text="Ordonnance" textFill="WHITE">
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="2.0" layoutY="215.0" prefHeight="3.0" prefWidth="308.0" />
+                              <Separator layoutX="5.0" layoutY="514.0" prefHeight="2.0" prefWidth="302.0" />
+                              <ImageView fitHeight="258.0" fitWidth="377.0" layoutX="26.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@CliniMate.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="retour" layoutX="12.0" layoutY="14.0" mnemonicParsing="false" onAction="#Home" prefHeight="31.0" prefWidth="120.0" style="-fx-background-radius: 30; -fx-background-color: linear-gradient(to right, #134e5e, #71b280);" text="RETOUR" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font></Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="629.0" prefWidth="588.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="9.0" layoutY="7.0" prefHeight="596.0" prefWidth="566.0" stylesheets="@bilan.css">
+                           <styleClass>
+                              <String fx:value="white-form" />
+                              <String fx:value="border" />
+                           </styleClass>
+                           <children>
+                              <TableView fx:id="TableViewDossier" layoutX="-9.0" layoutY="42.0" prefHeight="572.0" prefWidth="587.0">
+                                <columns>
+                                  <TableColumn fx:id="certificat_Dossier" prefWidth="92.800048828125" text="Certificat" />
+                                    <TableColumn fx:id="GS_Dossier" minWidth="0.0" prefWidth="68.0" text="Gr Sanguin" />
+                                    <TableColumn fx:id="ordonnance" prefWidth="79.19998168945312" text="Ordonnance" />
+                                    <TableColumn fx:id="btnB" prefWidth="129.5999755859375" text="Bilan" />
+                                    <TableColumn fx:id="btnsup" prefWidth="92.800048828125" text="Suppression" />
+                                    <TableColumn fx:id="nbr" prefWidth="118.40006103515623" text="Nbr Bilan" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="search" layoutX="162.0" layoutY="8.0" onKeyReleased="#FiltreKeyRealsead" prefHeight="26.0" prefWidth="250.0" promptText="Recherche.." style="-fx-background-radius: 30;" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
